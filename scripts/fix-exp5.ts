@@ -18,7 +18,7 @@ async function fix() {
       },
     })
   );
-  console.log("✅ Fixed exp5 images!");
+  console.log("Fixed exp5 images!");
 }
 
 fix();
