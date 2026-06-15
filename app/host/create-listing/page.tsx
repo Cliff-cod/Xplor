@@ -121,7 +121,10 @@ export default function CreateListingPage() {
                     <label className="text-sm font-semibold text-foreground block mb-2">
                       City
                     </label>
-                    <Select value={formData.city} onValueChange={(v) => handleSelectChange('city', v ?? '')}
+<Select
+  value={formData.city}
+  onValueChange={(v) => handleSelectChange('city', v ?? '')}
+>
                       <SelectTrigger className="bg-background border-border">
                         <SelectValue placeholder="Select a city" />
                       </SelectTrigger>
