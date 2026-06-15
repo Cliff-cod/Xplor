@@ -4,13 +4,14 @@ import { docClient, TABLES } from "@/lib/dynamodb";
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const result = await docClient.send(
       new GetCommand({
         TableName: TABLES.EXPERIENCES,
-        Key: { id: params.id },
+        Key: { id },
       })
     );
     if (!result.Item) {
