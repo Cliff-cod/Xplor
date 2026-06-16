@@ -75,9 +75,8 @@ export default function CreateListingPage() {
             {[1, 2, 3, 4].map((s) => (
               <div
                 key={s}
-                className={`h-2 flex-1 rounded-full transition-colors ${
-                  s <= step ? 'bg-primary' : 'bg-muted'
-                }`}
+                className={`h-2 flex-1 rounded-full transition-colors ${s <= step ? 'bg-primary' : 'bg-muted'
+                  }`}
               />
             ))}
           </div>
@@ -96,11 +95,10 @@ export default function CreateListingPage() {
                         key={cat}
                         type="button"
                         onClick={() => handleSelectChange('category', cat)}
-                        className={`p-4 rounded-lg border-2 transition-all ${
-                          formData.category === cat
+                        className={`p-4 rounded-lg border-2 transition-all ${formData.category === cat
                             ? 'border-primary bg-primary/10'
                             : 'border-border hover:border-primary/50'
-                        }`}
+                          }`}
                       >
                         <span className="font-semibold text-foreground">{cat}</span>
                       </button>
@@ -121,10 +119,10 @@ export default function CreateListingPage() {
                     <label className="text-sm font-semibold text-foreground block mb-2">
                       City
                     </label>
-<Select
-  value={formData.city}
-  onValueChange={(v) => handleSelectChange('city', v ?? '')}
->
+                    <Select
+                      value={formData.city}
+                      onValueChange={(v) => handleSelectChange('city', v ?? '')}
+                    >
                       <SelectTrigger className="bg-background border-border">
                         <SelectValue placeholder="Select a city" />
                       </SelectTrigger>
@@ -290,7 +288,10 @@ export default function CreateListingPage() {
                       <label className="text-sm font-semibold text-foreground block mb-2">
                         Unit
                       </label>
-                      <Select value={formData.durationUnit} onValueChange={(v) => handleSelectChange('durationUnit', v)}>
+                      <Select
+                        value={formData.durationUnit}
+                        onValueChange={(v) => handleSelectChange('durationUnit', v ?? 'hours')}
+                      >
                         <SelectTrigger className="bg-background border-border">
                           <SelectValue />
                         </SelectTrigger>
