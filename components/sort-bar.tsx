@@ -49,7 +49,7 @@ export function SortBar({
           <label className="text-sm text-muted-foreground font-medium hidden sm:inline">
             Sort by:
           </label>
-          <Select value={sortBy} onValueChange={onSortChange}>
+          <Select value={sortBy} onValueChange={(v) => onSortChange(v ?? 'relevant')}>
             <SelectTrigger className="w-40 md:w-48 border-primary/30 bg-background hover:border-primary/50">
               <SelectValue placeholder="Sort by" />
             </SelectTrigger>
